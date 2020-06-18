@@ -9,9 +9,9 @@ using System.Security;
 [assembly: AssemblyTitle("bExcelRegex")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Bartlomiej Cieszkowski")]
 [assembly: AssemblyProduct("bExcelRegex")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCopyright("Copyright © Bartlomiej Cieszkowski 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
