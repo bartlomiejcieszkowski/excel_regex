@@ -36,16 +36,16 @@
 		{
 			this.tab1 = this.Factory.CreateRibbonTab();
 			this.group1 = this.Factory.CreateRibbonGroup();
+			this.buttonGroup2 = this.Factory.CreateRibbonButtonGroup();
+			this.buttonFind = this.Factory.CreateRibbonButton();
+			this.buttonReplace = this.Factory.CreateRibbonButton();
 			this.buttonGroup1 = this.Factory.CreateRibbonButtonGroup();
 			this.buttonPrev = this.Factory.CreateRibbonButton();
 			this.buttonNext = this.Factory.CreateRibbonButton();
-			this.buttonFind = this.Factory.CreateRibbonButton();
-			this.buttonGroup2 = this.Factory.CreateRibbonButtonGroup();
-			this.buttonReplace = this.Factory.CreateRibbonButton();
 			this.tab1.SuspendLayout();
 			this.group1.SuspendLayout();
-			this.buttonGroup1.SuspendLayout();
 			this.buttonGroup2.SuspendLayout();
+			this.buttonGroup1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tab1
@@ -61,6 +61,24 @@
 			this.group1.Items.Add(this.buttonGroup1);
 			this.group1.Label = "bExcelRegex";
 			this.group1.Name = "group1";
+			// 
+			// buttonGroup2
+			// 
+			this.buttonGroup2.Items.Add(this.buttonFind);
+			this.buttonGroup2.Items.Add(this.buttonReplace);
+			this.buttonGroup2.Name = "buttonGroup2";
+			// 
+			// buttonFind
+			// 
+			this.buttonFind.Label = "Find";
+			this.buttonFind.Name = "buttonFind";
+			this.buttonFind.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonFind_Click);
+			// 
+			// buttonReplace
+			// 
+			this.buttonReplace.Label = "Replace";
+			this.buttonReplace.Name = "buttonReplace";
+			this.buttonReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonReplace_Click);
 			// 
 			// buttonGroup1
 			// 
@@ -80,24 +98,6 @@
 			this.buttonNext.Name = "buttonNext";
 			this.buttonNext.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonNext_Click);
 			// 
-			// buttonFind
-			// 
-			this.buttonFind.Label = "Find";
-			this.buttonFind.Name = "buttonFind";
-			this.buttonFind.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonFind_Click);
-			// 
-			// buttonGroup2
-			// 
-			this.buttonGroup2.Items.Add(this.buttonFind);
-			this.buttonGroup2.Items.Add(this.buttonReplace);
-			this.buttonGroup2.Name = "buttonGroup2";
-			// 
-			// buttonReplace
-			// 
-			this.buttonReplace.Label = "Replace";
-			this.buttonReplace.Name = "buttonReplace";
-			this.buttonReplace.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonReplace_Click);
-			// 
 			// bExcelRegexRibbon
 			// 
 			this.Name = "bExcelRegexRibbon";
@@ -108,10 +108,10 @@
 			this.tab1.PerformLayout();
 			this.group1.ResumeLayout(false);
 			this.group1.PerformLayout();
-			this.buttonGroup1.ResumeLayout(false);
-			this.buttonGroup1.PerformLayout();
 			this.buttonGroup2.ResumeLayout(false);
 			this.buttonGroup2.PerformLayout();
+			this.buttonGroup1.ResumeLayout(false);
+			this.buttonGroup1.PerformLayout();
 			this.ResumeLayout(false);
 
 		}
