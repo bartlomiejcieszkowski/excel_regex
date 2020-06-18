@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("bExcelRegexForms")]
+[assembly: AssemblyTitle("bExcelRegex.Forms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("bExcelRegexForms")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyCompany("Bartlomiej Cieszkowski")]
+[assembly: AssemblyProduct("bExcelRegex.Forms")]
+[assembly: AssemblyCopyright("Copyright © Bartlomiej Cieszkowski 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

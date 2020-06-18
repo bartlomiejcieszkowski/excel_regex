@@ -39,7 +39,7 @@ namespace bExcelRegex
             logger = new Logger(GetPluginDirectory() + "\\bExcelRegex.log");
 
             //userControl = new UserControl1();
-            //taskPane = this.CustomTaskPanes.Add(userControl, TaskPaneTitle);
+            taskPane = this.CustomTaskPanes.Add(userControl, TaskPaneTitle);
         }
 
 
