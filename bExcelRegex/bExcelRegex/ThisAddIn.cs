@@ -13,6 +13,11 @@ namespace bExcelRegex
 {
     public partial class ThisAddIn
     {
+        private const string TaskPaneTitle = "bExcelRegex";
+
+        //private UserControl1 userControl;
+        private Microsoft.Office.Tools.CustomTaskPane taskPane;
+
         private Logger logger;
 
         public Logger GetLogger() { return logger; }
@@ -32,6 +37,9 @@ namespace bExcelRegex
 
             // TODO: Multiple excel instances, wont that break? differntiate, add tid/pid suffix?
             logger = new Logger(GetPluginDirectory() + "\\bExcelRegex.log");
+
+            //userControl = new UserControl1();
+            //taskPane = this.CustomTaskPanes.Add(userControl, TaskPaneTitle);
         }
 
 
