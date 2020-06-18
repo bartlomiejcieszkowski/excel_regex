@@ -6,14 +6,34 @@ using System.Xml.Linq;
 using Excel = Microsoft.Office.Interop.Excel;
 using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
+using bLogger;
+using System.IO;
 
 namespace bExcelRegex
 {
     public partial class ThisAddIn
     {
-        private void ThisAddIn_Startup(object sender, System.EventArgs e)
+        private Logger logger;
+
+        public Logger GetLogger() { return logger; }
+
+        private string GetPluginDirectory()
         {
+            return Environment.GetFolderPath(
+                Environment.SpecialFolder.LocalApplicationData) + "\\bcieszko\\bExcelRegex";
         }
+
+        private void ThisAddIn_Startup(object sender, EventArgs e)
+        {
+            if (!Directory.Exists(GetPluginDirectory()))
+            {
+                Directory.CreateDirectory(GetPluginDirectory());
+            }
+
+            // TODO: Multiple excel instances, wont that break? differntiate, add tid/pid suffix?
+            logger = new Logger(GetPluginDirectory() + "\\bExcelRegex.log");
+        }
+
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
