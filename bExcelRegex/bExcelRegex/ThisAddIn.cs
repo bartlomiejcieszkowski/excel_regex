@@ -30,7 +30,6 @@ namespace bExcelRegex
 
 		public void ShowTaskPane(bool show, ShowSource showSource)
 		{
-			taskPane.Visible = !show;
 			taskPane.Visible = show;
 		}
 
@@ -53,11 +52,18 @@ namespace bExcelRegex
             userControl = new UserControl1();
             taskPane = this.CustomTaskPanes.Add(userControl, TaskPaneTitle);
             taskPane.Visible = false;
+			taskPane.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionFloating;
         }
 
 
         private void ThisAddIn_Shutdown(object sender, System.EventArgs e)
         {
+			taskPane = null;
+			userControl.Dispose();
+			userControl = null;
+
+			logger.Dispose();
+			logger = null;
         }
 
         #region VSTO generated code
