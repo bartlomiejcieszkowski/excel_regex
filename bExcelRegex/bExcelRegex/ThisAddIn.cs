@@ -8,6 +8,7 @@ using Office = Microsoft.Office.Core;
 using Microsoft.Office.Tools.Excel;
 using bLogger;
 using System.IO;
+using bExcelRegex.Search;
 
 namespace bExcelRegex
 {
@@ -21,19 +22,26 @@ namespace bExcelRegex
 
         private const string TaskPaneTitle = "bExcelRegex";
 
-        private UserControl1 userControl;
+        private SearchControl userControl;
         private Microsoft.Office.Tools.CustomTaskPane taskPane;
 
         private Logger logger;
 
-        public Logger GetLogger() { return logger; }
+		private SearchEngine searchEngine;
+
+		internal SearchEngine GetSearchEngine()
+		{
+			return searchEngine;
+		}
+
+		public Logger GetLogger() { return logger; }
 
 		public void ShowTaskPane(bool show, ShowSource showSource)
 		{
 			taskPane.Visible = show;
 		}
 
-        private string GetPluginDirectory()
+		private string GetPluginDirectory()
         {
             return Environment.GetFolderPath(
                 Environment.SpecialFolder.LocalApplicationData) + "\\bcieszko\\bExcelRegex";
@@ -48,11 +56,15 @@ namespace bExcelRegex
 
             // TODO: Multiple excel instances, wont that break? differntiate, add tid/pid suffix?
             logger = new Logger(GetPluginDirectory() + "\\bExcelRegex.log");
+			searchEngine = new SearchEngine();
 
-            userControl = new UserControl1();
+            userControl = new SearchControl();
             taskPane = this.CustomTaskPanes.Add(userControl, TaskPaneTitle);
             taskPane.Visible = false;
 			taskPane.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionFloating;
+			taskPane.DockPosition = Office.MsoCTPDockPosition.msoCTPDockPositionRight;
+			taskPane.DockPositionRestrict = Office.MsoCTPDockPositionRestrict.msoCTPDockPositionRestrictNoHorizontal;
+			//taskPane.Width =  userControl.size
         }
 
 

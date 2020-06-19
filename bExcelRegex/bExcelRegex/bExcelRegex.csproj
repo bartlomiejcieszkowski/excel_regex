@@ -185,11 +185,30 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UserControl1.cs">
+    <Compile Include="SearchEngine.cs" />
+    <Compile Include="SearchLocationControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <Compile Include="SearchLocationControl.Designer.cs">
+      <DependentUpon>SearchLocationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchModeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchModeControl.Designer.cs">
+      <DependentUpon>SearchModeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchOrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchOrderControl.Designer.cs">
+      <DependentUpon>SearchOrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SearchControl.Designer.cs">
+      <DependentUpon>SearchControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="bExcelRegexRibbon.resx">
       <DependentUpon>bExcelRegexRibbon.cs</DependentUpon>
@@ -203,8 +222,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
+    <EmbeddedResource Include="SearchLocationControl.resx">
+      <DependentUpon>SearchLocationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchModeControl.resx">
+      <DependentUpon>SearchModeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchOrderControl.resx">
+      <DependentUpon>SearchOrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchControl.resx">
+      <DependentUpon>SearchControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
